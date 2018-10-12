@@ -1,0 +1,206 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <style>
+                .navbar-orang{
+                    background-color: #F37502;
+                }
+                ul {
+                    position: static;
+                }
+                li a{
+                    display: block;
+                    color: white;
+                    text-align: center;
+                    text-decoration: none;
+                }
+                li a:hover {
+                    background-color: #D96700;
+                }
+                .btn-active{
+                    background-color: #D96700;
+                }
+                .icon-bar {
+                    width: 90px; /* Set a specific width */
+                    background-color: #ffffff; /* Dark-grey background */
+                }
+                .dropdown-menu {
+                    background-color: #F37502;
+                }
+                .navbar {
+                    position: -webkit-sticky;
+                    position: sticky;
+                    top: 0;
+                    border: 0px;
+                    z-index: 0;
+                }
+                .txtwhite{
+                    color: white;
+                }
+                .dropdown-menu li a{
+                    display: block;
+                    padding: 3px 20px;
+                    clear: both;
+                    font-weight: 400;
+                    line-height: 1.42857143;
+                    color: white;
+                    white-space: nowrap;
+                }
+                .navbar-toggle{
+                    height: 25px;
+                    padding: inherit;
+                }
+                /*------------------------------*/
+                /*mise en page formulaire login*/
+                input[type=text], input[type=password] {
+                    width: 100%;
+                    padding: 12px 20px;
+                    margin: 8px 0;
+                    display: block;
+                    border: 1px solid #ccc;
+                    box-sizing: border-box;
+                }
+                button {
+                    background-color: #4CAF50;
+                    color: white;
+                    padding: 10px 22px;
+                    margin: 8px 0;
+                    border: none;
+                    cursor: pointer;
+                    width: auto;
+                }
+                button:hover {
+                    opacity: 0.8;
+                }
+                .cancelbtn {
+                    width: auto;
+                    padding: 10px 18px;
+                    background-color: #f44336;
+                }
+                .submit{
+                    width: auto;
+                    padding: 10px 18px;
+                    background-color: #f44336;
+                }
+                .container {
+                    padding: 16px;
+                    width: 100%;
+                }
+                span.psw {
+                    float: right;
+                    padding-top: 16px;
+                }
+                .modal {
+                    display: none; /* Hidden by default */
+                    position: fixed; /* Stay in place */
+                    z-index: 1; /* Sit on top */
+                    left: 0;
+                    top: 0;
+                    width: 100%; /* Full width */
+                    height: 100%; /* Full height */
+                    overflow: auto; /* Enable scroll if needed */
+                    background-color: rgb(0,0,0); /* Fallback color */
+                    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+                    padding-top: 150px;
+                }
+                .modal-content {
+                    background-color: #fefefe;
+                    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+                    border: 1px solid #888;
+                    width:75%; /* Could be more or less, depending on screen size */
+                    display: block;
+                }
+                .close {
+                    position: absolute;
+                    right: 25px;
+                    top: 0;
+                    color: #000;
+                    font-size: 35px;
+                    font-weight: bold;
+                }
+                .close:hover,
+                .close:focus {
+                    color: red;
+                    cursor: pointer;
+                }
+                .animate {
+                    -webkit-animation: animatezoom 0.6s;
+                    animation: animatezoom 0.6s
+                }
+                @-webkit-keyframes animatezoom {
+                    from {-webkit-transform: scale(0)}
+                    to {-webkit-transform: scale(1)}
+                }
+                @keyframes animatezoom {
+                    from {transform: scale(0)}
+                    to {transform: scale(1)}
+                }
+                @media screen and (max-width: 300px) {
+                    span.psw {
+                        float: none;
+                    }
+                    .cancelbtn {
+                        width: 100%;
+                    }
+                }
+                /*------------------------------*/</style>
+            <div id="nav_left">
+                <ul>
+                    <li><a href="https://www.sdis-malley.ch/" id="logo_home"><img
+                            class="col-xs-1 col-sm-4 col-md-5 col-lg-5" src="Img/logo.jpg"> </a>
+                        <div>
+                            <p style="font-family: 'Palatino Linotype';">
+
+                            <div><b style="font-size: medium;color: greenyellow">JSP</b></div>
+                            <div><b style="font-size: xx-large;color: greenyellow">Prilly</b></div>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Accueil</a></li>
+                <li><a href="#">JSP</a></li>
+                <li><a href="#">Calendrier 2k18</a></li>
+                <li><a href="#">ETC</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a onclick="OpenLogin()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+    function close(){
+        document.getElementById('id01').style.display='none';
+    }
+    function OpenLogin() {
+        document.getElementById('id01').style.display='block';
+    }
+</script>
+<!-- formulaire login -->
+<div id="id01" class="modal ">
+    <form class="modal-content animate" action="index.php?action=test_login" method="post">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none';document.getElementById('Nav_Inline').style.display='block'" class="close" title="Close Modal">&times;</span>
+        </div>
+        <div class="container" style="width: 100%;">
+            <label for="Name"><b>Email</b></label>
+            <input type="text" placeholder="Entrée l'identifiant" name="fEmail"  required>
+            <label for="psw"><b>Mot de passe</b></label>
+            <input type="password" placeholder="Entrée mot de passe" name="fPwd" required>
+            <button type="submit">Connexion</button>
+            <button type="button" onclick="document.getElementById('id01').style.display='none';document.getElementById('Nav_Inline').style.display='block'"  class="cancelbtn">Cancel</button>
+        </div>
+    </form>
+</div>
